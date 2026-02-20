@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Debate Fallacy Detector</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container py-5 mt-5">
+<h1>AI Debate Fallacy Detector</h1>
+<form action="/analyze" method="POST">
+<textarea name="argument" rows="6" placeholder="Type your argument here..." required></textarea>
+<button type="submit" class="btn-analyze">Analyze</button>
+</form>
+
+{% if result %}
+<div class="output">
+<h4>Detected Fallacies:</h4>
+<p>{{ result }}</p>
+</div>
+{% endif %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</div>
+</body>
+</html>
